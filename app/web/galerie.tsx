@@ -3,11 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Remplace les chemins par tes propres images si besoin
 const devices = [
   {
     label: "tel 1",
-    src: "/personne-tenant-telephone.jpg",
+    src: "/iphone.png",
     className:
       "w-56 h-[28rem] rounded-2xl shadow-lg z-20 flex items-center justify-center text-xl font-bold overflow-hidden bg-black",
     style: { marginLeft: "0" },
@@ -15,7 +14,7 @@ const devices = [
   },
   {
     label: "tel 2",
-    src: "/iphone-stadium.jpg",
+    src: "/personne-tenant-telephone.jpg",
     className:
       "w-56 h-[36rem] rounded-2xl shadow-lg z-30 flex items-center justify-center text-xl font-bold overflow-hidden bg-black",
     style: { marginLeft: "-48px" },
@@ -67,7 +66,6 @@ const Galerie = () => (
             src={devices[0].src}
             alt={devices[0].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>
@@ -80,12 +78,11 @@ const Galerie = () => (
             src={devices[1].src}
             alt={devices[1].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>
       </div>
-      {/* Center computer */}
+
       <motion.div
         {...fadeIn(0.3)}
         className={devices[2].className}
@@ -95,7 +92,6 @@ const Galerie = () => (
           src={devices[2].src}
           alt={devices[2].alt}
           className="object-cover w-full h-full"
-          whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200 }}
         />
       </motion.div>
@@ -110,7 +106,6 @@ const Galerie = () => (
             src={devices[3].src}
             alt={devices[3].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>
@@ -127,7 +122,6 @@ const Galerie = () => (
             src={devices[0].src}
             alt={devices[0].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>
@@ -139,7 +133,6 @@ const Galerie = () => (
             src={devices[1].src}
             alt={devices[1].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>
@@ -153,7 +146,6 @@ const Galerie = () => (
             src={devices[2].src}
             alt={devices[2].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>
@@ -165,7 +157,6 @@ const Galerie = () => (
             src={devices[3].src}
             alt={devices[3].alt}
             className="object-cover w-full h-full"
-            whileHover={{ scale: 1.04 }}
             transition={{ type: "spring", stiffness: 200 }}
           />
         </motion.div>

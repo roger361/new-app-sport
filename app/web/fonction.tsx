@@ -58,7 +58,7 @@ function Fonction() {
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center bg-white/80 rounded-2xl shadow-xl p-8 hover:scale-105 transition-transform"
+            className="flex flex-col items-center text-center bg-white/80 rounded-2xl shadow-xl p-8  transition-transform"
           >
             <img
               src={f.imgSrc}

@@ -1,24 +1,34 @@
-"use client";
-
 import React from "react";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
-    <nav className="bg-blue-600 px-4 py-3 flex items-center justify-between">
-      <div className="text-white font-bold text-xl">SportApp</div>
-      <ul className="flex space-x-6">
+    <nav style={{ padding: "1rem", background: "#222", color: "#fff" }}>
+      <ul
+        style={{
+          display: "flex",
+          gap: "2rem",
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
+        }}
+      >
         <li>
-          <a href="/" className="text-white hover:text-blue-200">
+          <a href="#home" style={{ color: "#fff", textDecoration: "none" }}>
             Accueil
           </a>
         </li>
         <li>
-          <a href="/activites" className="text-white hover:text-blue-200">
-            Activités
+          <a href="#about" style={{ color: "#fff", textDecoration: "none" }}>
+            À propos
           </a>
         </li>
         <li>
-          <a href="/contact" className="text-white hover:text-blue-200">
+          <a href="#services" style={{ color: "#fff", textDecoration: "none" }}>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="#contact" style={{ color: "#fff", textDecoration: "none" }}>
             Contact
           </a>
         </li>

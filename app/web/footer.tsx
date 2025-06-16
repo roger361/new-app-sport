@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Footer = () => (
@@ -18,12 +17,12 @@ const Footer = () => (
           &copy; 2024
         </span>
       </span>
-      <Link
+      <a
         href="/mentions-legales"
         className="text-blue-600 hover:underline hover:text-blue-800 transition"
       >
         Mentions légales
-      </Link>
+      </a>
     </motion.div>
   </footer>
 );

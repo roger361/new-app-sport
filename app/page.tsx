@@ -4,6 +4,9 @@ import Header from "./web/header";
 import Fonction from "./web/fonction";
 import Avis from "./web/avis";
 import Galerie from "./web/galerie";
+import Pourqoui from "./web/pourquoi";
+import Question from "./web/question";
+import Footer from "./web/footer";
 export default async function Home(): Promise<React.ReactNode> {
   return (
     <div>
@@ -11,7 +14,9 @@ export default async function Home(): Promise<React.ReactNode> {
       <Fonction />
       <Avis />
       <Galerie />
-      {/* Ajoute d'autres sections ici si nécessaire */}
+      <Pourqoui />
+      <Question />
+      <Footer />
     </div>
   );
 }

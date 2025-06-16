@@ -27,3 +27,11 @@ body {
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
 }
+
+footer {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}

@@ -9,7 +9,7 @@ const Avis = () => (
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="text-5xl md:text-6xl font-extrabold mb-10 text-center"
+      className="text-5xl md:text-6xl font-extrabold mb-10 text-center text-black"
     >
       Avis utilisateurs
     </motion.h2>
@@ -26,7 +26,7 @@ const Avis = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className="text-xl md:text-2xl text-gray-700 font-medium px-8"
+        className="text-xl md:text-2xl text-black font-medium px-8 avis-utilisateur"
       >
         Je suis vraiment impatient de la sortie de Sport-App !<br />
         Avoir un outil pour échanger des lieux et rencontrer des sportifs près

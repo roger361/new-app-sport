@@ -8,29 +8,25 @@ const features = [
     title: "Localiser des terrains",
     desc: "Trouvez facilement les lieux pour pratiquer votre sport",
     imgAlt: "Localiser",
-    imgSrc:
-      "https://teamopendata.org/uploads/default/original/2X/7/7e2e7e7e7e7e7e7e7e7e7e7e7e7e7e7e7e7e7e7e.png",
+    imgSrc: "localiser.jpg",
   },
   {
     title: "Ajouter vos sports",
     desc: "Vous pratiquez un sport rare ?\nCréez-le dans l'app",
     imgAlt: "Ajouter",
-    imgSrc:
-      "https://www.aizenay.fr/wp-content/uploads/2021/06/salle-de-sport.jpg",
+    imgSrc: "ajouter.jpg",
   },
   {
     title: "Partage de contenu",
     desc: "Photos, vidéos, avis : partagez vos expériences sportives",
     imgAlt: "Partage",
-    imgSrc:
-      "https://www.redacteur.com/blog/wp-content/uploads/2017/10/partager-contenu.jpg",
+    imgSrc: "partagé.jpg",
   },
   {
     title: "Interactions sociales",
     desc: "Invitez vos amis, rejoignez des groupes et organisez des matchs",
     imgAlt: "Social",
-    imgSrc:
-      "https://www.centre-lives.ch/sites/default/files/styles/large/public/2021-03/interactions-sociales.jpg",
+    imgSrc: "interaction.jpg",
   },
 ];
 

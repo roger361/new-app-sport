@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 
 const Header: React.FC = () => (
   <div className="relative w-full bg-gradient-to-b from-green-800 to-green-600">
-    {/* Navbar positionnée au-dessus du header */}
-    <Navbar />
-
     <header className="w-full py-10 px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10 pt-28 md:pt-36">
       {/* Bloc gauche */}
       <motion.div

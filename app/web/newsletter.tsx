@@ -37,7 +37,7 @@ export default function Newsletter() {
                 Soyez les premiers informés
               </motion.h1>
               <p className="text-gray-800 text-lg md:text-xl leading-relaxed">
-                Inscrivez-vous à notre newsletter pour recevoir les dernières
+                Inscrivez-vous à notre newsletter pour recevoi les dernières
                 actualités de Sport-App.
               </p>
             </div>

@@ -2,25 +2,30 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
+import Navbar from "./navbar";
 const Header: React.FC = () => (
-  <header className="w-full px-4 py-10 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-lg bg-transparent">
-    {/* Bloc gauche : texte */}
+  <header
+    className="w-full px-4 py-10 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-lg bg-transparent"
+    id="accueil"
+  >
+    <Navbar />
     <motion.div
       initial={{ opacity: 0, x: -40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="w-full max-w-xl flex flex-col items-start gap-4"
     >
-      {/* Logo */}
-      <motion.span
+      {/* Logo avec lien vers accueil */}
+      <motion.a
+        href="#accueil"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.6 }}
         className="text-2xl font-bold tracking-wide text-white drop-shadow mb-2"
+        id="header-logo"
       >
         Sport-App
-      </motion.span>
+      </motion.a>
 
       {/* Titre principal */}
       <motion.h1

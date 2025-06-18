@@ -46,7 +46,7 @@ const fadeIn = (delay = 0) => ({
 });
 
 const Galerie = () => (
-  <section className="py-16 px-4">
+  <section id="galerie" className="py-16 px-4">
     <motion.h2
       {...fadeIn(0)}
       className="text-4xl md:text-6xl font-extrabold text-center mb-12 gradient-text bg-gradient-to-r from-black via-gray-800 to-green-900 bg-clip-text text-transparent"

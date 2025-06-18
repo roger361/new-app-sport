@@ -34,8 +34,16 @@ const cardVariants = {
 
 export default function PourquoiSportApp() {
   return (
-    <Container>
-      <Title>Pourquoi Sport-App&nbsp;?</Title>
+    <Container id="avantages">
+      <motion.h1
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.7 }}
+        className="text-4xl md:text-6xl font-extrabold leading-tight text-transparent bg-gradient-to-r from-black via-gray-800 to-green-900 bg-clip-text drop-shadow mb-4"
+        style={{ marginBottom: "3rem" }}
+      >
+        Pourquoi Sport-App&nbsp;?
+      </motion.h1>
       <Grid>
         {avantages.map((avantage, i) => (
           <Card
@@ -65,16 +73,9 @@ const Container = styled.section`
   text-align: center;
 `;
 
-const Title = styled.h2`
-  font-size: 3rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 3rem;
-`;
-
 const Grid = styled.div`
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-items: center;
 
   // Mobile: 1 colonne

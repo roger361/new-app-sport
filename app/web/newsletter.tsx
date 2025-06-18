@@ -22,7 +22,10 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4">
+    <section
+      id="newsletter"
+      className="min-h-screen flex flex-col items-center justify-center px-4"
+    >
       <div className="w-full max-w-4xl mx-auto">
         {!submitted ? (
           <div>

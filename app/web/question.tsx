@@ -3,72 +3,67 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
-const faqs = [
+const questions = [
   {
-    question: "Est-ce que c'est gratuit ?",
-    answer: "Oui, l'accès à la plateforme est entièrement gratuit.",
-    isOpen: false,
+    q: "Comment puis-je créer un compte sur Sport-App ?",
+    a: "Pour créer un compte, cliquez sur 'S’inscrire' en haut à droite et suivez les instructions en renseignant votre email et un mot de passe.",
   },
   {
-    question: "Quels sports sont disponibles ?",
-    answer:
-      "Tous les sports sont bienvenus sur la plateforme, du football au yoga.",
-    isOpen: false,
+    q: "Sport-App est-il compatible avec tous les appareils ?",
+    a: "Oui, Sport-App fonctionne sur ordinateur, tablette et smartphone via votre navigateur ou notre application mobile.",
   },
   {
-    question: "Puis-je proposer un lieu ?",
-    answer: "Oui, vous pouvez proposer un lieu via votre compte.",
-    isOpen: true,
+    q: "Comment suivre mes progrès sportifs ?",
+    a: "Rendez-vous dans la rubrique 'Tableau de bord' pour visualiser vos statistiques, vos séances et vos évolutions au fil du temps.",
   },
   {
-    question: "Y aura-t-il une appli Android/iOS ?",
-    answer:
-      "Une application mobile est prévue prochainement sur Android et iOS.",
-    isOpen: false,
+    q: "Puis-je rejoindre une communauté ou un groupe ?",
+    a: "Oui, Sport-App propose des groupes thématiques et une communauté active pour échanger, se motiver et partager ses réussites.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndexes, setOpenIndexes] = useState(() => faqs.map(() => false));
-
-  const toggle = (index: number) => {
-    setOpenIndexes((prev) => {
-      const updated = [...prev];
-      updated[index] = !updated[index];
-      return updated;
-    });
-  };
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <Section>
-      <Title>Foire aux questions</Title>
+    <Section id="faq">
+      <Title>
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="text-4xl md:text-6xl font-extrabold leading-tight text-transparent bg-gradient-to-r from-black via-gray-800 to-green-900 bg-clip-text drop-shadow mb-4"
+        >
+          Foire aux questions
+        </motion.h1>
+      </Title>
       <List>
-        {faqs.map((faq, index) => (
-          <Item key={index}>
+        {questions.map((item, idx) => (
+          <Item key={idx}>
             <Header
-              onClick={() => toggle(index)}
-              aria-expanded={openIndexes[index]}
+              onClick={() => setOpen(open === idx ? null : idx)}
+              aria-expanded={open === idx}
               role="button"
             >
-              <Question>{faq.question}</Question>
-              <Icon animate={{ rotate: openIndexes[index] ? 180 : 0 }}>
-                {openIndexes[index] ? "−" : "+"}
-              </Icon>
+              <Question>{item.q}</Question>
+              <ChevronDown
+                className={`w-6 h-6 text-emerald-500 transform transition-transform duration-300 ${
+                  open === idx ? "rotate-180" : ""
+                }`}
+              />
             </Header>
             <AnimatePresence initial={false}>
-              {openIndexes[index] && (
+              {open === idx && (
                 <Answer
-                  initial="collapsed"
-                  animate="open"
-                  exit="collapsed"
-                  variants={{
-                    open: { opacity: 1, height: "auto" },
-                    collapsed: { opacity: 0, height: 0 },
-                  }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="px-6 pb-5 text-gray-700 text-base"
                 >
-                  <AnswerText>{faq.answer}</AnswerText>
+                  {item.a}
                 </Answer>
               )}
             </AnimatePresence>
@@ -133,19 +128,6 @@ const Question = styled.span`
   font-size: 1.3rem; /* un peu plus grand */
 `;
 
-const Icon = styled(motion.span)`
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #000;
-  transition: transform 0.3s ease;
-`;
-
 const Answer = styled(motion.div)`
   overflow: hidden;
-`;
-
-const AnswerText = styled.div`
-  padding: 1rem 2rem 1.5rem;
-  font-size: 1.1rem;
-  color: #555;
 `;

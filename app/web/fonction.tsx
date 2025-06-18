@@ -32,7 +32,10 @@ const features = [
 
 function Fonction() {
   return (
-    <section className="py-16 px-4 md:px-12 rounded-3xl shadow-lg my-12 bg-transparent">
+    <section
+      id="caracteristiques"
+      className="py-16 px-4 md:px-12 rounded-3xl shadow-lg my-12 bg-transparent"
+    >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

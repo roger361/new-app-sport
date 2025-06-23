@@ -12,13 +12,27 @@ export default function Newsletter() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validateEmail(email)) {
       setError("Veuillez saisir une adresse email valide.");
       return;
     }
     setError("");
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data.error || "Erreur lors de l'inscription.");
+        return;
+      }
+      setSubmitted(true);
+    } catch (e) {
+      setError("Erreur réseau ou serveur.");
+    }
   };
 
   return (
@@ -82,21 +96,8 @@ export default function Newsletter() {
           <div className="text-center py-20">
             <CheckCircle className="w-20 h-20 mx-auto mb-6 text-green-600" />
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Inscription réussie !
+              Merci pour votre inscription.
             </h3>
-            <p className="text-gray-800 text-lg mb-7">
-              Merci pour votre inscription. Vous recevrez bientôt nos dernières
-              actualités.
-            </p>
-            <button
-              onClick={() => {
-                setSubmitted(false);
-                setEmail("");
-              }}
-              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold rounded-full px-8 py-3 transition-all duration-300"
-            >
-              S&apos;inscrire à nouveau
-            </button>
           </div>
         )}
       </div>

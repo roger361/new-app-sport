@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Footer = () => (
   <footer className="w-full bg-white border-t border-gray-200 py-6 px-4 mt-auto">
@@ -17,12 +18,12 @@ const Footer = () => (
           &copy; 2024
         </span>
       </span>
-      <a
-        href="/mentions-legales"
+      <Link
+        href="/mention-legales"
         className="text-blue-600 hover:underline hover:text-blue-800 transition"
       >
         Mentions légales
-      </a>
+      </Link>
     </motion.div>
   </footer>
 );

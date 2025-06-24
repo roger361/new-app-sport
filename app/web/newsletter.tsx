@@ -19,13 +19,14 @@ export default function Newsletter() {
     }
     setError("");
     try {
+      // Appel à l'API qui gère l'inscription Mailchimp
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
+      const data = await res.json();
       if (!res.ok) {
-        const data = await res.json();
         setError(data.error || "Erreur lors de l'inscription.");
         return;
       }

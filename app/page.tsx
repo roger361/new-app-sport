@@ -8,6 +8,7 @@ import Pourqoui from "./web/pourquoi";
 import Newsletter from "./web/newsletter";
 import Question from "./web/question";
 import Footer from "./web/footer";
+
 export default async function Home(): Promise<React.ReactNode> {
   return (
     <div>
